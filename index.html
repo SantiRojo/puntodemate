@@ -11,41 +11,53 @@
     <meta name="apple-mobile-web-app-title" content="Punto de Mate" />
     <link rel="manifest" href="./favicon/site.webmanifest" />
     <!-- Google Fonts -->
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <!-- CSS -->
      <link rel="stylesheet" href="./styles.css">
   <title>Punto de Mate</title>
 </head>
 <body>
 
-  <header class="hero">
+  <header id="hero" class="hero">
 
     <!-- Navbar -->
-    <section class="menu">
-      <div id="menu__logo">
+    <nav class="nav">
+      <div class="nav__logo">
         <img src="./src/media/img/punto_de_mate_logo.svg" alt="Logo Punto de Mate">
         <h1>PUNTO DE MATE</h1>
       </div>
   
-      <nav class="menu__nav">
+      <div class="nav__menu">
         <ul>
-          <li class="navItem">Productos</li>
-          <li class="navItem">¿Quiénes somos?</li>
-          <li class="navItem">Contacto</li>
+          <li class="navItem">
+            <a href="#products">Productos</a>
+          </li>
+          <li class="navItem">
+            <a href="about">¿Quiénes somos?</a>
+          </li>
+          <li class="navItem">
+            <a href="contact">Contacto</a>
+          </li>
         </ul>
-      </nav>
+      </div>
   
-      <div class="menu__ig">
-        <a href="https://instagram.com/puntodemate">
+      <div class="nav__ig">
+        <a href="https://instagram.com/puntodemate" target="_blank">
           <img src="./src/media/img/icons/ig-icon.svg" alt="Instagram Punto de Mate">
         </a>
       </div>
-    </section>
+    </nav>
 
     <!--Call to action section -->
     <section class="cta">
-      <p class="cta__text">La experiencia del mate, llevada a otro nivel.</p>
-      <button class="cta__button">¡Quiero el mío!</button>
+      <p class="cta__text">La experiencia del mate,</p>
+      <p class="cta__text">llevada a otro nivel.</p>
+      <div class="cta__button">
+        <a href="https://google.com" class="cta__link">¡Quiero el mío!
+        </a>
+      </div>
     </section>
 
   </header>
