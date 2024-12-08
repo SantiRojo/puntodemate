@@ -10,34 +10,42 @@
     <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png" />
     <meta name="apple-mobile-web-app-title" content="Punto de Mate" />
     <link rel="manifest" href="./favicon/site.webmanifest" />
+    <!-- Google Fonts -->
 
+    <!-- CSS -->
+     <link rel="stylesheet" href="./styles.css">
   <title>Punto de Mate</title>
 </head>
 <body>
-  <header id="heroSection">
 
-    <section id="heroSection-menu">
-      <div id="logoContainer">
+  <header class="hero">
+
+    <!-- Navbar -->
+    <section class="menu">
+      <div id="menu__logo">
         <img src="./src/media/img/punto_de_mate_logo.svg" alt="Logo Punto de Mate">
         <h1>PUNTO DE MATE</h1>
       </div>
   
-      <nav>
+      <nav class="menu__nav">
         <ul>
-          <li>Productos</li>
-          <li>¿Quiénes somos?</li>
-          <li>Contacto</li>
+          <li class="navItem">Productos</li>
+          <li class="navItem">¿Quiénes somos?</li>
+          <li class="navItem">Contacto</li>
         </ul>
       </nav>
   
-      <div>
-        <img src="./src/media/img/icons/ig-icon.svg" alt="Instagram Punto de Mate">
+      <div class="menu__ig">
+        <a href="https://instagram.com/puntodemate">
+          <img src="./src/media/img/icons/ig-icon.svg" alt="Instagram Punto de Mate">
+        </a>
       </div>
     </section>
 
-    <section class="ctaSection">
-      <p>La experiencia del mate, llevada a otro nivel.</p>
-      <button>¡Quiero el mío!</button>
+    <!--Call to action section -->
+    <section class="cta">
+      <p class="cta__text">La experiencia del mate, llevada a otro nivel.</p>
+      <button class="cta__button">¡Quiero el mío!</button>
     </section>
 
   </header>
@@ -45,67 +53,74 @@
   <main>
     <section id="products">
       <h2>NUESTROS PRODUCTOS</h2>
-      <div class="products-filter--container">
+
+      <!-- Products filter section-->
+      <div class="filter">
         <ul>
-          <li class="products-filter--item">Todos</li>
-          <li class="products-filter--item">Mates</li>
-          <li class="products-filter--item">Bombillas</li>
-          <li class="products-filter--item">Termos</li>
-          <li class="products-filter--item">Combos</li>
-          <li class="products-filter--item">Accesorios</li>
+          <li class="filter__item filter__item--active">Todos</li>
+          <li class="filter__item">Mates</li>
+          <li class="filter__item">Bombillas</li>
+          <li class="filter__item">Termos</li>
+          <li class="filter__item">Combos</li>
+          <li class="filter__item">Accesorios</li>
         </ul>
       </div>
 
-      <div class="products-gallery">
+      <!-- Products catalog -->
+      <div class="catalog">
 
-        <button id="prevBtn">
-          <img src="" alt="">
-        </button>
+        <div class="catalog__buttonContainer">
+          <button id="prevBtn" class="catalog__button">
+            <img src="./src/media/img/icons/navigation-arrow.svg" alt="Anterior">
+          </button>
+        </div>
 
-        <div class="products-gallery--container">
+        <div class="catalog__galleryContainer">
 
-          <div class="products-gallery--grid">
-            <div class="products-gallery--item">
-              <img src="" alt="">
+          <div class="galleryGrid">
+            <div class="productItem">
+              <img class="productItem__productImg" src="" alt="">
             </div>
-            <div class="products-gallery--item">
-              <img src="" alt="">
+            <div class="productItem">
+              <img class="productItem__productImg" src="" alt="">
             </div>
-            <div class="products-gallery--item">
-              <img src="" alt="">
+            <div class="productItem">
+              <img class="productItem__productImg" src="" alt="">
             </div>
-            <div class="products-gallery--item">
-              <img src="" alt="">
+            <div class="productItem">
+              <img class="productItem__productImg" src="" alt="">
             </div>
-            <div class="products-gallery--item">
-              <img src="" alt="">
+            <div class="productItem">
+              <img class="productItem__productImg" src="" alt="">
             </div>
-            <div class="products-gallery--item">
-              <img src="" alt="">
+            <div class="productItem">
+              <img class="productItem__productImg" src="" alt="">
             </div>
-            <div class="products-gallery--item">
-              <img src="" alt="">
+            <div class="productItem">
+              <img class="productItem__productImg" src="" alt="">
             </div>
-            <div class="products-gallery--item">
-              <img src="" alt="">
+            <div class="productItem">
+              <img class="productItem__productImg" src="" alt="">
             </div>
-            <div class="products-gallery--item">
-              <img src="" alt="">
+            <div class="productItem">
+              <img class="productItem__productImg" src="" alt="">
             </div>
           </div>
 
-          <div class="products-gallery--paginationContainer">
-            <div class="products-gallery--paginationItem"></div>
-            <div class="products-gallery--paginationItem"></div>
-            <div class="products-gallery--paginationItem"></div>
-            <div class="products-gallery--paginationItem"></div>
-            <div class="products-gallery--paginationItem"></div>
+          <div class="pagination">
+            <div class="pagination__item pagination__item--active"></div>
+            <div class="pagination__item"></div>
+            <div class="pagination__item"></div>
+            <div class="pagination__item"></div>
+            <div class="pagination__item"></div>
           </div>
         </div>
 
-        <button id="nextBtn">
-          <img src="" alt="">
-        </button>
+        <div class="catalog__buttonContainer">
+          <button id="nextBtn" class="">
+            <img src="./src/media/img/icons/navigation-arrow.svg" alt="Siguiente">
+          </button>
+        </div>
       </div>
     </section>
   </main>
