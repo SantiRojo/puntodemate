@@ -4,16 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Favicons -->
-    <link rel="icon" type="image/png" href="./favicon/favicon-96x96.png" sizes="96x96" />
-    <link rel="icon" type="image/svg+xml" href="./favicon/favicon.svg" />
-    <link rel="shortcut icon" href="./favicon/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" href="./src/media/img/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="./src/media/img/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="./src/media/img/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="./src/media/img/favicon/apple-touch-icon.png" />
     <meta name="apple-mobile-web-app-title" content="Punto de Mate" />
-    <link rel="manifest" href="./favicon/site.webmanifest" />
+    <link rel="manifest" href="./src/media/img/favicon/site.webmanifest" />
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <!-- CSS -->
      <link rel="stylesheet" href="./styles.css">
   <title>Punto de Mate</title>
@@ -35,10 +35,10 @@
             <a href="#products">Productos</a>
           </li>
           <li class="navItem">
-            <a href="about">¿Quiénes somos?</a>
+            <a href="#about">¿Quiénes somos?</a>
           </li>
           <li class="navItem">
-            <a href="contact">Contacto</a>
+            <a href="#contact">Contacto</a>
           </li>
         </ul>
       </div>
@@ -64,7 +64,7 @@
 
   <main>
     <section id="products">
-      <h2 class="title">NUESTROS PRODUCTOS</h2>
+      <h2 class="sectionTitle">NUESTROS PRODUCTOS</h2>
 
       <!-- Products filter section-->
       <ul class="filter">
@@ -124,10 +124,35 @@
         <p class="quote__author" >Julio Cortazar, Rayuela (1963).</p>
       </div>
     </section>
+
+    <section id="about">
+      <img id="cornerTop" src="./src/media/img/guarda-mate.svg" alt="Guarda yerba mate">
+      <div>
+        <h2 class="sectionTitle">¿Quiénes somos?</h2>
+        <p>¿Te imaginás poder disfrutar del mate de una manera inigualable? Ese fue nuestro objetivo al crear Punto de Mate.</p>
+        <p>Somos Eze y Nacho, dos amigos unidos por el amor al mate y la ganas de compartir este ritual tan especial con ustedes.</p>
+        <p>Nos destacamos por nuestro asesoramiento personalizado y nuestra búsqueda constante por ofrecerles los mejores productos junto a la mejor experiencia.</p>
+        <p>Nuestra visión es convertirnos en tu compañero de mate ideal, acompañándote en cada cebada.</p>
+      </div>
+      <img id="cornerBottom" src="./src/media/img/guarda-mate.svg" alt="Guarda yerba mate">
+    </section>
+
+    <section id="contact">
+      <div class="contact__ctaContainer">
+        <h2 class="sectionTitle">¿No sabés cuál elegir?</h2>
+        <p class="contact__text">Contactanos y te ayudamos a encontrar tu mate perfecto, para nosotros será un placer asesorarte.</p>
+        <div class="contact__button">
+          <img src="./src/media/img/icons/whatsapp-icon.svg" alt="WhatsApp">
+          <a href="">Punto de Mate</a>
+        </div>
+      </div>
+      <img class="contact__img" src="./src/media/img/contact us ws.png" alt="">
+    </section>
   </main>
 
   <footer>
-
+    <img src="./src/media/img/punto_de_mate_logo.svg" alt="Logo Punto de Mate">
+    <p>Punto de Mate 2025 | Diseñado y desarrollado por <a href="https://www.linkedin.com/in/santirojo/" target="_blank">Santi Rojo</a>.</p>
   </footer>
 </body>
 </html>
