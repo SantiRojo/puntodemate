@@ -152,6 +152,27 @@ h1 {
   text-decoration: none;
 }
 
+#scrollIcon {
+  position: absolute;
+  width: 40px;
+  bottom: 20px;
+  left: calc(50% - 20px);
+  animation: float 1s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
 main {
   margin: 0 auto;
   display: flex;
@@ -432,4 +453,11 @@ footer p {
 footer a {
   font-weight: 500;
   color: var(--beige);
+}
+
+
+/* Media Queries */
+
+@media (max-width: 768px) {
+  
 }
