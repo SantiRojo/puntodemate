@@ -377,7 +377,7 @@ main {
 }
 
 #about {
-  height: 100vh;
+  min-height: min-content;
   min-height: 760px;
   width: 100vw;
   position: relative;
@@ -393,6 +393,7 @@ main {
 
 #about div {
   width: 55%;
+  margin: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -410,7 +411,7 @@ main {
   position: absolute;
   top: 0;
   right: 0;
-  width: 30%;
+  max-width: 30%;
   mask-image: linear-gradient(
     var(--beige) 90%,
     transparent
@@ -422,7 +423,7 @@ main {
   position: absolute;
   bottom: 0;
   left: 0;
-  width: 30%;
+  max-width: 30%;
   mask-image: linear-gradient(
     var(--beige) 90%,
     transparent
@@ -557,19 +558,6 @@ footer a {
 
 @media (max-width: 980px) {
 
-  .cta__text {
-    font-size: 2.5rem;
-  }
-
-  .cta__button {
-    height: 48px;
-    width: 200px;
-  }
-
-  .cta__link {
-    font-size: 1.25rem;
-  }
-
   .sectionTitle {
     font-size: 2rem;
   }
@@ -577,6 +565,16 @@ footer a {
   .filter {
     max-width: 550px;
     overflow: scroll;
+  }
+
+  .catalog__button {
+    width: 30px;
+    height: 30px;
+    margin: 10px;
+  }
+
+  .catalog__button img {
+    height: 20px;
   }
 
   .galleryContainer {
@@ -588,6 +586,11 @@ footer a {
     width: 450px;
     height: 450px;
     gap: 10px;
+  }
+
+  .pagination__item {
+    width: 8px;
+    height: 8px;
   }
 
   #quote {
@@ -628,4 +631,64 @@ footer a {
     font-size: 1.25rem;
   }
 
+}
+
+@media (max-width: 768px) {
+
+  .cta__text {
+    font-size: 2.5rem;
+  }
+
+  .cta__button {
+    height: 48px;
+    width: 200px;
+  }
+
+  .cta__link {
+    font-size: 1.25rem;
+  }
+
+  .quote__textContainer {
+    width: 80%;
+  }
+
+  .quote__text {
+    font-size: 2rem;
+  }
+
+  .quote__author {
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav__logo img {
+    height: 30px;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  .menuBtn__line {
+    width: 25px;
+    height: 2px;
+  }
+
+  .cta__text {
+    font-size: 1.75rem;
+  }
+
+  .cta__button {
+    width: 175px;
+    height: 40px;
+  }
+
+  .cta__link {
+    font-size: 1rem;
+  }
+
+  .sectionTitle {
+    font-size: 1.5rem;
+  }
 }
