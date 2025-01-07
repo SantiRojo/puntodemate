@@ -662,6 +662,11 @@ footer a {
 }
 
 @media (max-width: 480px) {
+
+  .nav {
+    margin: 15px 20px 0 15px;
+  }
+
   .nav__logo img {
     height: 30px;
   }
