@@ -44,6 +44,7 @@ body {
   position: relative;
   margin: 20px 30px 0 30px;
   height: 70px;
+  /* width: 100vw; */
   display: grid;
   grid-template-columns: 1fr 2fr;
   align-items: center;
@@ -533,14 +534,16 @@ footer a {
 
 @media (max-width: 1024px) {
   
+  .nav {
+    justify-content: space-between;
+  }
   
   #menuBtn {
-    position: absolute;
-    top: 20px;
-    right: 0px;
+    width: 30px;
+    justify-self: end;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-evenly;
     gap: 7px;
     cursor: pointer;
   }
@@ -613,10 +616,6 @@ footer a {
     height: 500px;
   }
 
-/*   .contact__text {
-    font-size: 1.25rem;
-  } */
-
   .contact__button {
     height: 48px;
     width: 200px;
@@ -672,9 +671,9 @@ footer a {
   }
 
   h1 {
-    font-size: 1.5rem;
+    font-size: 2rem;
   }
-
+  
   .menuBtn__line {
     width: 25px;
     height: 2px;
@@ -696,4 +695,93 @@ footer a {
   .sectionTitle {
     font-size: 1.5rem;
   }
+
+  .filter {
+    max-width: 325px;
+    margin: 30px 0 20px;
+    gap: 10px;
+  }
+
+  .filter__item {
+    font-size: .75rem;
+  }
+
+  .catalog__button {
+    width: 20px;
+    height: 20px;
+    border-width: 2px;
+    margin: 0;
+  }
+
+  .catalog__button img {
+    height: 15px;
+  }
+
+  .galleryContainer {
+    width: 350px;
+    height: 350px;
+  }
+
+  .galleryGrid {
+    width: 320px;
+    height: 320px;
+    gap: 10px;
+  }
+
+  .pagination__item {
+    width: 8px;
+    height: 8px;
+  }
+
+  #about div {
+    width: 70%;
+  }
+
+  #about p {
+    font-size: 1rem;
+  }
+
+  #contact {
+    height: 400px;
+  }
+
+  .contact__ctaContainer {
+    margin: 0;
+    align-items: center;
+  }
+
+  .contact__ctaContainer h2 {
+    margin: 0;
+  }
+
+  .contact__text {
+    font-size: 1rem;
+    text-align: center;
+    padding: 0 20px;
+  }
+
+  .contact__button {
+    width: 175px;
+    height: 40px;
+  }
+
+  .contact__button a {
+    font-size: 1rem;
+  }
+
+  .contact__img {
+    display: none;
+  }
+
+  footer img {
+    height: 12px;
+    margin: 5px;
+  }
+  
+  footer p {
+    font-size: .75rem;
+    font-weight:300;
+    color: var(--beige);
+  }
+
 }
