@@ -729,7 +729,7 @@ footer a {
   }
 
   #about div {
-    width: 70%;
+    width: 90%;
   }
 
   #about p {
@@ -761,7 +761,7 @@ footer a {
   } */
 
   .contact__button a {
-    font-size: 1.75rem;
+    font-size: 1.25rem;
   }
 
   .contact__img {
