@@ -718,13 +718,13 @@ footer a {
   }
 
   .galleryContainer {
-    width: 350px;
-    height: 350px;
+    width: 330px;
+    height: 330px;
   }
 
   .galleryGrid {
-    width: 320px;
-    height: 320px;
+    width: 300px;
+    height: 300px;
     gap: 10px;
   }
 
