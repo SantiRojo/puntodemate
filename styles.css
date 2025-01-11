@@ -660,7 +660,7 @@ footer a {
   }
 }
 
-@media (max-width: 480px) {
+/* @media (max-width: 480px) {
 
   .nav {
     margin: 15px 20px 0 15px;
@@ -784,4 +784,4 @@ footer a {
     color: var(--beige);
   }
 
-}
+} */
