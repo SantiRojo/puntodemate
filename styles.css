@@ -11,7 +11,6 @@
 }
 
 html {
-  font-size: 16px;
   scroll-behavior: smooth;
 }
 
@@ -690,11 +689,11 @@ footer a {
   }
 
   .cta__link {
-    font-size: 1rem;
+    font-size: 1.5rem;
   }
 
   .sectionTitle {
-    font-size: 1.5rem;
+    font-size: 2rem;
   }
 
   .filter {
@@ -704,7 +703,7 @@ footer a {
   }
 
   .filter__item {
-    font-size: .75rem;
+    font-size: 1.25rem;
   }
 
   .catalog__button {
@@ -739,7 +738,7 @@ footer a {
   }
 
   #about p {
-    font-size: 1rem;
+    font-size: 1.5rem;
   }
 
   #contact {
@@ -756,7 +755,7 @@ footer a {
   }
 
   .contact__text {
-    font-size: 1rem;
+    font-size: 1.5rem;
     text-align: center;
     padding: 0 20px;
   }
@@ -767,7 +766,7 @@ footer a {
   }
 
   .contact__button a {
-    font-size: 1rem;
+    font-size: 1.5rem;
   }
 
   .contact__img {
