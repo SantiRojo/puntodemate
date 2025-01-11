@@ -597,7 +597,7 @@ footer a {
   }
 
   .productItem:hover {
-    transform: none;
+    transform: scale(1);
   }
 
   #quote {
@@ -688,7 +688,7 @@ footer a {
   }
 
   .cta__link {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
   }
 
   .sectionTitle {
@@ -737,6 +737,10 @@ footer a {
     height: 8px;
   }
 
+  #quote {
+    height: 300px;
+  }
+
   .quote__text {
     font-size: 1.5rem;
   }
@@ -746,11 +750,11 @@ footer a {
   }
 
   #about p {
-    font-size: 1.25rem;
+    font-size: 1rem;
   }
 
   #contact {
-    height: 400px;
+    height: 350px;
   }
 
   .contact__ctaContainer {
@@ -763,7 +767,7 @@ footer a {
   }
 
   .contact__text {
-    font-size: 1.25rem;
+    font-size: 1rem;
     text-align: center;
     padding: 0 20px;
   }
