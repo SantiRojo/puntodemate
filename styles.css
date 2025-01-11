@@ -11,6 +11,7 @@
 }
 
 html {
+  font-size: 16px;
   scroll-behavior: smooth;
 }
 
@@ -660,7 +661,7 @@ footer a {
   }
 }
 
-/* @media (max-width: 480px) {
+@media (max-width: 480px) {
 
   .nav {
     margin: 15px 20px 0 15px;
@@ -779,9 +780,9 @@ footer a {
   }
   
   footer p {
-    font-size: .75rem;
+    /* font-size: .75rem; */
     font-weight:300;
     color: var(--beige);
   }
 
-} */
+}
