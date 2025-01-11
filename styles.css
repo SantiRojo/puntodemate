@@ -596,6 +596,10 @@ footer a {
     height: 8px;
   }
 
+  .productItem:hover {
+    transform: none;
+  }
+
   #quote {
     margin: 0px;
   }
@@ -698,7 +702,7 @@ footer a {
   }
 
   .filter__item {
-    font-size: 1.25rem;
+    font-size: 1rem;
   }
 
   .catalog__button {
@@ -721,16 +725,20 @@ footer a {
   .galleryGrid {
     width: 320px;
     height: 320px;
-    gap: 5px;
+    gap: 8px;
   }
 
   .productItem {
-    border-radius: 5px;
+    border-radius: 8px;
   }
 
   .pagination__item {
     width: 8px;
     height: 8px;
+  }
+
+  .quote__text {
+    font-size: 1.75rem;
   }
 
   #about div {
