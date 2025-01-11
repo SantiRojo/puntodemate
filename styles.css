@@ -743,6 +743,7 @@ footer a {
 
   .quote__text {
     font-size: 1.5rem;
+    hyphens: auto;
   }
 
   #about div {
