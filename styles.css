@@ -644,7 +644,7 @@ footer a {
   }
 
   .cta__link {
-    font-size: 1.25rem;
+    font-size: 1.5rem;
   }
 
   .quote__textContainer {
@@ -671,7 +671,7 @@ footer a {
   }
 
   h1 {
-    font-size: 2rem;
+    font-size: 1.75rem;
   }
   
   .menuBtn__line {
@@ -683,17 +683,12 @@ footer a {
     font-size: 1.75rem;
   }
 
-  .cta__button {
-    width: 175px;
-    height: 40px;
-  }
-
   .cta__link {
     font-size: 1.5rem;
   }
 
   .sectionTitle {
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
 
   .filter {
@@ -738,7 +733,7 @@ footer a {
   }
 
   #about p {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
   }
 
   #contact {
@@ -755,18 +750,18 @@ footer a {
   }
 
   .contact__text {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     text-align: center;
     padding: 0 20px;
   }
 
-  .contact__button {
+/*   .contact__button {
     width: 175px;
     height: 40px;
-  }
+  } */
 
   .contact__button a {
-    font-size: 1.5rem;
+    font-size: 1.75rem;
   }
 
   .contact__img {
@@ -779,7 +774,7 @@ footer a {
   }
   
   footer p {
-    /* font-size: .75rem; */
+    font-size: 1rem;
     font-weight:300;
     color: var(--beige);
   }
