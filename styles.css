@@ -688,7 +688,7 @@ footer a {
   }
 
   .sectionTitle {
-    font-size: 1.5rem;
+    font-size: 1.75rem;
   }
 
   .filter {
@@ -702,25 +702,30 @@ footer a {
   }
 
   .catalog__button {
-    width: 20px;
+    display: none;
+/*     width: 20px;
     height: 20px;
     border-width: 2px;
-    margin: 0;
+    margin: 0; */
   }
 
-  .catalog__button img {
+/*   .catalog__button img {
     height: 15px;
-  }
+  } */
 
   .galleryContainer {
-    width: 330px;
-    height: 330px;
+    width: 350px;
+    height: 350px;
   }
 
   .galleryGrid {
-    width: 300px;
-    height: 300px;
-    gap: 10px;
+    width: 320px;
+    height: 320px;
+    gap: 5px;
+  }
+
+  .productItem {
+    border-radius: 5px;
   }
 
   .pagination__item {
