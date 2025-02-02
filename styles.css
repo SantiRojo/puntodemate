@@ -78,9 +78,10 @@ h1 {
   height: 3px;
   background-color: var(--beige);
   border-radius: 25px;
+  transition: transform .3s ease-in-out;
 }
 
-#menuContainer {
+.menu__container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
 }
@@ -515,6 +516,10 @@ footer a {
     grid-template-columns: repeat(2, 1fr);
   }
 
+  .menu__container {
+    position: relative;
+  }
+
 }
 
 @media (max-width: 1280px) {
@@ -537,20 +542,11 @@ footer a {
   .nav {
     justify-content: space-between;
   }
-  
-  #menuBtn {
-    width: 30px;
-    justify-self: end;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    gap: 7px;
-    cursor: pointer;
-  }
 
   #menuBtn {
     z-index: 100;
     width: 30px;
+    height: 30px;
     justify-self: end;
     display: flex;
     flex-direction: column;
@@ -559,18 +555,19 @@ footer a {
     cursor: pointer;
   }
 
-  #menuContainer {
+  .menu__container {
     width: 100vw;
     height: 450px;
     position: absolute;
-    top: 0;
-    right: 0;
-    z-index: 10;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
+    top: -450px;
+    right: 0;
+    z-index: 10;
     background-color: var(--mate-green);
+    transition: transform .3s ease-in-out;
   }
 
   .nav__menu {
@@ -583,6 +580,24 @@ footer a {
 
   .nav__ig {
     margin-left: 0px;
+  }
+
+  .menu--open {
+    transform: translateY(450px);
+  }
+  
+  .menuBtn__topLine--close {
+    position: absolute;
+    transform: rotate(45deg) scale(1.2);
+  }
+  
+  .menuBtn__middleLine--close {
+    transform: scaleX(0);
+  }
+  
+  .menuBtn__bottomLine--close {
+    position: absolute;
+    transform: rotate(-45deg) scale(1.2);
   }
 
   #quote {
@@ -740,10 +755,6 @@ footer a {
 
   .catalog__button {
     display: none;
-/*     width: 20px;
-    height: 20px;
-    border-width: 2px;
-    margin: 0; */
   }
 
   .galleryContainer {
@@ -822,3 +833,4 @@ footer a {
   }
 
 }
+
