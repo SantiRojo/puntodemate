@@ -323,20 +323,20 @@ main {
   object-fit: cover;
 }
 
-.pagination {
+.pageIndicator__container {
   display: flex;
   justify-content: center;
   gap: 5px;
 }
 
-.pagination__item {
+.pageIndicator {
   width: 10px;
   height: 10px;
   background-color: #D9D9D9;
   border-radius: 100%;
 }
 
-.pagination__item--active {
+.pageIndicator--active {
   background-color: var(--mate-green);
 }
 

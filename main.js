@@ -8,6 +8,7 @@ const catalogUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTwgiiAm4dD5
 const filterSection = document.querySelector('.filter');
 
 const galleryGridsContainer = document.querySelector('.galleryGridsContainer');
+const pageIndicatorContainer = document.querySelector('.pageIndicator__container');
 
 
 async function getProducts() {
@@ -80,13 +81,22 @@ function filterByCategory(selectedCategory) {
 
 function createProductGallery(productPagesArr) {
 
+  let pageNumber = 1;
+
   galleryGridsContainer.innerHTML = '';
+  pageIndicatorContainer.innerHTML = '';
 
   productPagesArr.forEach(page => {
 
     let galleryGrid = document.createElement('div');
+    galleryGrid.setAttribute('id', `Page${pageNumber}`);
     galleryGrid.classList.add('galleryGrid');
     galleryGridsContainer.appendChild(galleryGrid);
+
+    let pageIndicator = document.createElement('div');
+    pageIndicator.setAttribute('id', `Page${pageNumber}`)
+    pageIndicator.classList.add('pageIndicator');
+    pageIndicatorContainer.appendChild(pageIndicator);
 
     for (let i = 0; i < page.length; i++) {
       let productItem = document.createElement('div');
@@ -102,7 +112,11 @@ function createProductGallery(productPagesArr) {
 
       galleryGrid.appendChild(productItem);
     }
+
+    pageNumber++;
+
   });
+
 }
 
 window.addEventListener('load', getProducts);
