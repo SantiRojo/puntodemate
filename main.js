@@ -6,9 +6,13 @@ let productPages = [];
 const catalogUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTwgiiAm4dD5NjC9xFZDm7seaXbm621-wWXprgH83QYu1f7QbrqqFyOK_sp3LXI10MGBLeC6gwI_oMc/pub?gid=0&single=true&output=csv';
 
 const filterSection = document.querySelector('.filter');
+const filterSectionChildrens = [...filterSection.children];
 
+const galleryContainer = document.querySelector('.galleryContainer')
 const galleryGridsContainer = document.querySelector('.galleryGridsContainer');
 const pageIndicatorContainer = document.querySelector('.pageIndicator__container');
+
+let paginationDots = [];
 
 
 async function getProducts() {
@@ -71,15 +75,28 @@ function filterByCategory(selectedCategory) {
 
     console.log(filteredProducts);
 
-    let filteredProductPages = createProductsPagination(filteredProducts)
+    let filteredProductPages = createProductsPagination(filteredProducts);
 
     createProductGallery(filteredProductPages);
-
-
   }
 }
 
 function createProductGallery(productPagesArr) {
+
+  galleryGridsContainer.style.transform = `translateX(0px)`;
+
+  if (productPagesArr.length < 2) {
+    prevBtn.classList.add('hidden');
+    nextBtn.classList.add('hidden');
+  } else {
+    prevBtn.classList.remove('hidden');
+    prevBtn.classList.add('catalog__button--disabled');
+    nextBtn.classList.remove('hidden');
+    nextBtn.classList.remove('catalog__button--disabled');
+  }
+
+
+  currentPosition = 0;
 
   let pageNumber = 1;
 
@@ -89,12 +106,12 @@ function createProductGallery(productPagesArr) {
   productPagesArr.forEach(page => {
 
     let galleryGrid = document.createElement('div');
-    galleryGrid.setAttribute('id', `Page${pageNumber}`);
+    galleryGrid.setAttribute('id', pageNumber);
     galleryGrid.classList.add('galleryGrid');
     galleryGridsContainer.appendChild(galleryGrid);
 
     let pageIndicator = document.createElement('div');
-    pageIndicator.setAttribute('id', `Page${pageNumber}`)
+    pageIndicator.setAttribute('id', pageNumber);
     pageIndicator.classList.add('pageIndicator');
     pageIndicatorContainer.appendChild(pageIndicator);
 
@@ -117,10 +134,88 @@ function createProductGallery(productPagesArr) {
 
   });
 
+  paginationDots = document.querySelectorAll('.pageIndicator');
+
+  if (paginationDots.length > 0) {
+    paginationDots[0].classList.add('pageIndicator--active');
+  }
 }
 
 window.addEventListener('load', getProducts);
 
 filterSection.addEventListener('click', (e) => {
-  filterByCategory(e.target.textContent);
+
+  if(e.target.localName != 'ul') {
+
+    filterSectionChildrens.forEach(filterItem => {
+      filterItem.classList.remove('filter__item--active');
+    });
+    e.target.classList.add('filter__item--active');
+    filterByCategory(e.target.textContent);
+
+  }
+})
+
+
+
+let currentPosition = 0;
+let galleryContainerWidth = galleryContainer.clientWidth;
+
+
+function galleryNavigator(pageId) {
+
+  if (galleryGridsContainer.children.length > 1) {
+    let distance = currentPosition + (galleryContainerWidth * pageId);
+
+    galleryGridsContainer.style.transform = `translateX(${distance}px)`;
+  
+    currentPosition = distance;
+  
+    console.log(currentPosition);
+
+  }
+}
+
+const prevBtn = document.getElementById('prevBtn');
+
+prevBtn.addEventListener('click', () => {
+
+  if (currentPosition < 0) {
+    galleryNavigator(1);
+
+  } 
+
+  if (currentPosition === 0) {
+    prevBtn.classList.add('catalog__button--disabled');
+    nextBtn.classList.remove('catalog__button--disabled');
+  } else {
+    prevBtn.classList.remove('catalog__button--disabled');
+    nextBtn.classList.remove('catalog__button--disabled');
+  }
+
+})
+
+
+const nextBtn = document.getElementById('nextBtn');
+
+nextBtn.addEventListener('click', () => {
+
+  if (currentPosition != (galleryGridsContainer.children.length - 1) * (-galleryContainerWidth)) {
+
+    galleryNavigator(-1);
+
+  }
+  
+  if (currentPosition === (galleryGridsContainer.children.length - 1) * (-galleryContainerWidth)) {
+
+    prevBtn.classList.remove('catalog__button--disabled');
+    nextBtn.classList.add('catalog__button--disabled');
+
+  } else {
+
+    nextBtn.classList.remove('catalog__button--disabled');
+    prevBtn.classList.remove('catalog__button--disabled');
+
+  }
+
 })
