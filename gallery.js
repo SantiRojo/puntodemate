@@ -2,7 +2,10 @@ const filterSection = document.querySelector('.filter');
 const filterSectionChildrens = [...filterSection.children];
 
 const prevBtn = document.getElementById('prevBtn');
+const prevBtnArrow = document.getElementById('prevBtnArrow');
 const nextBtn = document.getElementById('nextBtn');
+const nextBtnArrow = document.getElementById('nextBtnArrow');
+
 
 const galleryContainer = document.querySelector('.galleryContainer')
 const galleryGridsContainer = document.querySelector('.galleryGridsContainer');
@@ -103,7 +106,7 @@ function createProductGallery(productPagesArr) {
     paginationDots = document.querySelectorAll('.pageIndicator');
     
     currentPage = 1;
-    
+
     if (paginationDots.length > 0) {
       paginationDots[0].classList.add('pageIndicator--active');
     }
@@ -135,6 +138,52 @@ function galleryNavigator(pageId) {
   }
 }
 
+function goToNextPage() {
+
+  if (currentPosition != (galleryGridsContainer.children.length - 1) * (-galleryContainerWidth)) {
+
+    galleryNavigator(-1);
+    currentPage++;
+    changePaginationDot();
+  }
+  
+  if (currentPosition === (galleryGridsContainer.children.length - 1) * (-galleryContainerWidth)) {
+
+    prevBtn.classList.remove('catalog__button--disabled');
+    prevBtnArrow.classList.remove('catalog__button__arrow--disabled');
+    nextBtn.classList.add('catalog__button--disabled');
+    nextBtnArrow.classList.add('catalog__button__arrow--disabled');
+
+  } else {
+
+    nextBtn.classList.remove('catalog__button--disabled');
+    prevBtnArrow.classList.remove('catalog__button__arrow--disabled');
+    prevBtn.classList.remove('catalog__button--disabled');
+    nextBtnArrow.classList.remove('catalog__button__arrow--disabled');
+  }
+}
+
+function goToPrevPage() {
+
+  if (currentPosition < 0) {
+    galleryNavigator(1);
+    currentPage--;
+    changePaginationDot();
+  } 
+
+  if (currentPosition === 0) {
+    prevBtn.classList.add('catalog__button--disabled');
+    prevBtnArrow.classList.add('catalog__button__arrow--disabled');
+    nextBtn.classList.remove('catalog__button--disabled');
+    nextBtnArrow.classList.remove('catalog__button__arrow--disabled');
+  } else {
+    prevBtn.classList.remove('catalog__button--disabled');
+    prevBtnArrow.classList.remove('catalog__button__arrow--disabled');
+    nextBtn.classList.remove('catalog__button--disabled');
+    nextBtnArrow.classList.remove('catalog__button__arrow--disabled');
+  }
+}
+
 filterSection.addEventListener('click', (e) => {
 
   if(e.target.localName != 'ul') {
@@ -148,43 +197,33 @@ filterSection.addEventListener('click', (e) => {
   }
 })
 
-prevBtn.addEventListener('click', () => {
 
-  if (currentPosition < 0) {
-    galleryNavigator(1);
-    currentPage--;
-    changePaginationDot();
-  } 
+let startX, startY;
 
-  if (currentPosition === 0) {
-    prevBtn.classList.add('catalog__button--disabled');
-    nextBtn.classList.remove('catalog__button--disabled');
-  } else {
-    prevBtn.classList.remove('catalog__button--disabled');
-    nextBtn.classList.remove('catalog__button--disabled');
+galleryGridsContainer.addEventListener('touchstart', (e) => {
+  startX = e.touches[0].clientX;
+  startY = e.touches[0].clientY;
+});
+
+galleryGridsContainer.addEventListener('touchend', (e) => {
+  if (!startX || !startY) return;
+
+  const endX = e.changedTouches[0].clientX;
+  const endY = e.changedTouches[0].clientY;
+  const difX = startX - endX;
+  const difY = startY - endY;
+
+  if (Math.abs(difY) < 50) {
+    if ( difX > 50) {
+      goToNextPage();
+    } else if (difX < -50) {
+      goToPrevPage();
+    }
   }
 
+  startX = null;
+  startY = null;
 })
 
-nextBtn.addEventListener('click', () => {
-
-  if (currentPosition != (galleryGridsContainer.children.length - 1) * (-galleryContainerWidth)) {
-
-    galleryNavigator(-1);
-    currentPage++;
-    changePaginationDot();
-  }
-  
-  if (currentPosition === (galleryGridsContainer.children.length - 1) * (-galleryContainerWidth)) {
-
-    prevBtn.classList.remove('catalog__button--disabled');
-    nextBtn.classList.add('catalog__button--disabled');
-
-  } else {
-
-    nextBtn.classList.remove('catalog__button--disabled');
-    prevBtn.classList.remove('catalog__button--disabled');
-
-  }
-
-})
+prevBtn.addEventListener('click', goToPrevPage);
+nextBtn.addEventListener('click', goToNextPage);

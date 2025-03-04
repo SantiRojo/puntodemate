@@ -269,11 +269,16 @@ main {
 }
 
 .catalog__button--disabled {
-  border-color: #b8b4b4;
+  border-color: #D9D9D9;
 }
 
-.catalog__button img {
+.catalog__button__arrow {
   height: 30px;
+  fill: var(--mate-green);
+}
+
+.catalog__button__arrow--disabled {
+  fill: #D9D9D9;
 }
 
 #prevBtn {
