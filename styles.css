@@ -458,7 +458,6 @@ main {
   height: 10px;
   background-color: #D9D9D9;
   border-radius: 100%;
-  cursor: pointer;
 }
 
 .pageIndicator--active {

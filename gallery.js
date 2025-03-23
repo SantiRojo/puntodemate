@@ -12,9 +12,8 @@ const galleryGridsContainer = document.querySelector('.galleryGridsContainer');
 const pageIndicatorContainer = document.querySelector('.pageIndicator__container');
 
 let paginationDots = [];
-
 let currentPosition = 0;
-let currentPage;
+let currentPage = 1;
 let galleryContainerWidth = galleryContainer.clientWidth;
 
 function filterByCategory(selectedCategory) {
