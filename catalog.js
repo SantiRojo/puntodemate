@@ -1,4 +1,4 @@
-import { createElement, products, createProductsPagination, productPagesArr } from "./refactoredCode/refactoredMain.js";
+import { createElement, products, createProductsPagination, productPagesArr } from "./main.js";
 
 const filterSection = document.querySelector('.filter');
 const filterSectionChildrens = [...filterSection.children];

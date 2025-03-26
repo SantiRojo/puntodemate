@@ -464,6 +464,24 @@ main {
   background-color: var(--mate-green);
 }
 
+/* Product Detail */
+
+#productDetailModal::before {
+  position: absolute;
+  content: "";
+  inset: 0;
+  background-color: rgba(0, 0, 0, .25);
+}
+
+#productDetailModal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: 100vw;
+  height: 100vh;
+}
+
 /* Quote Section */
 
 #quote {
