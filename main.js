@@ -18,6 +18,12 @@ async function getProducts() {
 
     const data = await response.text();
     products = parseCSV(data);
+
+    console.log(data);
+    
+    console.log(products);
+    console.log(products[0].whatsapp_product_url)
+    
     productPagesArr = createProductsPagination(products);
     createProductGallery(productPagesArr);
   } catch (error) {

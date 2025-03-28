@@ -1,4 +1,5 @@
 import { createElement, products, createProductsPagination, productPagesArr } from "./main.js";
+import { openProductModal } from "./productDetailModal.js";
 
 const filterSection = document.querySelector('.filter');
 const filterSectionChildrens = [...filterSection.children];
@@ -72,12 +73,19 @@ function createGalleryGrid(page, pageNumber) {
   const pageIndicator = createElement('div', 'pageIndicator', null, {id: pageNumber});
 
   page.forEach(product => {
-    const productItem = createElement('div', 'productItem', null, {id: product.id});
-    const productItemImg = createElement('img', 'productItem__img', null, {src: product.images_url, alt: product.product_name});
+    const productItem = createElement('div', 'productItem');
+    const productItemImg = createElement('img', 'productItem__img', null, {id: product.id, src: product.images_url, alt: product.product_name});
 
     productItem.appendChild(productItemImg);
     galleryGrid.appendChild(productItem);
   });
+
+  galleryGrid.addEventListener('click', (e) => {
+    
+    let clickedProduct = products.find(product => product.id === e.target.id);
+    
+    openProductModal(clickedProduct);
+  })
 
   galleryGridsContainer.appendChild(galleryGrid);
   pageIndicatorContainer.appendChild(pageIndicator);
